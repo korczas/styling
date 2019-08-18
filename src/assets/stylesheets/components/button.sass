@@ -1,0 +1,36 @@
+.button
+  +animate(background-color, border-color, color)
+  background-color: $brand-primary
+  border: 1px solid transparent
+  border-radius: $border-radius-sm
+  box-sizing: border-box
+  padding: $m-sm $m-lg
+  color: $color-gray-dark
+  font-weight: $font-weight-bold
+
+  &.-primary
+    color: $color-white
+
+    &:hover,
+    &:focus
+      +animate(background-color)
+      background-color: $brand-primary-light
+
+  &.-secondary
+    background-color: $color-gray-lightest
+    border-color: $color-gray-light
+
+    &:hover,
+    &:focus
+      +animate(border-color, color)
+      border-color: $brand-primary
+      color: $brand-primary
+
+  &.-success
+    background-color: $brand-success
+    color: $color-white
+
+    &:hover,
+    &:focus
+      +animate(background-color)
+      background-color: $brand-success-light
