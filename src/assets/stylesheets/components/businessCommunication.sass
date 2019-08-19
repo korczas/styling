@@ -1,3 +1,17 @@
+@keyframes playButton
+  0%
+    box-shadow: 0 0px 10px 10px rgba($color-gray-dark, .3)
+    width: 100px
+    height: 100px
+  50%
+    width: 110px
+    height: 110px
+  100%
+    box-shadow: 0 0px 10px 10px rgba($brand-primary, .3)
+    width: 100px
+    height: 100px
+
+
 .buscom
   &__wrapper
     background: linear-gradient(to right, $color-gray-lightest, $color-white)
@@ -41,7 +55,8 @@
 
       &:hover
         &:after
-          box-shadow: 0 0px 10px 10px rgba($brand-primary, .3)
+          animation: playButton $transition-duration
+          animation-fill-mode: forwards
 
       & img
         left: 50%
