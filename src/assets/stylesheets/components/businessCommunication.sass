@@ -4,9 +4,9 @@
     padding: $m-xxl * 3 0
 
   &__content
-    margin: 0 auto
     display: flex
     justify-content: space-around
+    margin: 0 auto
     text-align: left
     width: 1500px
 
@@ -17,26 +17,26 @@
       width: 550px
 
     & .play-button
-      position: absolute
-      width: 150px
-      height: 150px
       background-color: rgba($color-white, 0.7)
+      border-radius: 50%
+      height: 150px
+      position: absolute
       right: 50%
       top: 50%
       transform: translate(50%, -50%)
-      border-radius: 50%
+      width: 150px
 
       &:after
+        background-color: $color-white
+        border-radius: 50%
         box-shadow: 0 0px 10px 10px rgba($color-gray-dark, .3)
         content: ""
-        background-color: $color-white
-        width: 100px
         height: 100px
-        position: absolute
-        transform: translate(-50%, -50%)
-        top: 50%
         left: 50%
-        border-radius: 50%
+        position: absolute
+        top: 50%
+        transform: translate(-50%, -50%)
+        width: 100px
         z-index: $z-negative
 
       &:hover
@@ -44,15 +44,15 @@
           box-shadow: 0 0px 10px 10px rgba($brand-primary, .3)
 
       & img
-        position: absolute
-        width: 30%
-        transform: translate(-39%, -50%)
-        top: 50%
         left: 50%
+        position: absolute
+        top: 50%
+        transform: translate(-39%, -50%)
+        width: 30%
 
   &__overview
-    max-width: 450px
     align-self: center
+    max-width: 450px
 
   &__try-it
     display: flex
@@ -62,8 +62,8 @@
     color: black
     display: block
     font-size: $font-size-lg * 2
-    margin-bottom: $m-xl
     font-weight: $font-weight-bold
+    margin-bottom: $m-xl
 
   &__description
     font-size: $font-size-lg
