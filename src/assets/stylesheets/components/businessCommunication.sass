@@ -15,20 +15,20 @@
 .buscom
   &__wrapper
     background: linear-gradient(to right, $color-gray-lightest, $color-white)
-    padding: $m-xxl * 3 0
 
   &__content
     display: flex
     justify-content: space-around
     margin: 0 auto
     text-align: left
-    width: 1500px
+    flex-direction: column
 
   &__image
     position: relative
 
-    & img
-      width: 550px
+    & > img
+      width: 280px
+      margin: $m-xl auto $m-base
 
     & .play-button
       background-color: rgba($color-white, 0.7)
@@ -67,11 +67,15 @@
 
   &__overview
     align-self: center
-    max-width: 450px
+    padding: $m-base
 
   &__try-it
     display: flex
-    justify-content: space-between
+    flex-direction: column
+
+
+    & button
+      margin-top: $m-base
 
   &__header
     color: black
@@ -83,3 +87,46 @@
   &__description
     font-size: $font-size-lg
     margin-bottom: $m-xl
+
++media-breakpoint-up(md)
+  .buscom
+    &__try-it
+      flex-direction: row
+      justify-content: space-between
+
+      & button
+          margin-top: 0
+
+    &__overview
+      align-self: center
+      max-width: 650px
+
+    &__image > img
+        width: 380px
+
++media-breakpoint-up(lg)
+  .buscom
+    &__wrapper
+      padding: $m-xxl * 3 0
+
+    &__overview
+      align-self: center
+      max-width: 500px
+
+    &__image > img
+        width: 400px
+        margin: 0
+        top: 50%
+        transform: translateY(-50%)
+
+    &__content
+      flex-direction: row
+      width: 1000px
+
+    &__elements
+      flex-direction: column
+
++media-breakpoint-up(xl)
+  .buscom
+    &__content
+      width: 1200px
