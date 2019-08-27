@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState } from "react";
 import Button from "./Button";
 
@@ -12,7 +14,7 @@ export default function Navbar(props) {
       <div className="navbar__logo-and-menu">
         <Logo alt="logo" className="navbar__logo" />
 
-        <button onClick={() => toggleMenu(isMenuOpen => !isMenuOpen)}>
+        <button onClick={() => toggleMenu(isMenuOpen => !isMenuOpen)} className="navbar__menu-button">
           <Menu alt="menu" className="navbar__menu" />
         </button>
       </div>
