@@ -2,22 +2,23 @@ import React from "react";
 import Button from "./Button";
 
 import logo from "../assets/images/business_communication.png";
-import play from "../assets/images/play.svg";
+import { ReactComponent as Play } from "../assets/images/play.svg";
 
 export default function BusinessCommunication(props) {
   return (
-    <div className="buscom__wrapper">
+    <section className="buscom">
       <div className="buscom__content">
         <div className="buscom__image">
-          <img src={logo} alt="" className="buscom__image" />
-          <div className="play-button">
-            <img src={play} alt="" />
+          <span />
+          <img src={logo} alt="" />
+          <div className="buscom__play-button-circle">
+            <Play className="buscom__play-button"/>
           </div>
         </div>
         <div className="buscom__overview">
-          <span className="buscom__header">
+          <div className="buscom__header">
             Communicate. Collaborate. Complete.
-          </span>
+          </div>
           <p className="buscom__description">
             The remote collaboration tool to help you communicate effectively
             and work productively.
@@ -32,10 +33,10 @@ export default function BusinessCommunication(props) {
               <br />
               No credit card needed. <a className="underline">Privacy Policy</a>
             </div>
-            <Button text="Get Started" appearance="-success navbar__element" />
+            <Button text="Get Started" appearance="-success" />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

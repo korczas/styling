@@ -1,5 +1,5 @@
 .navbar
-  background: linear-gradient(to right, $color-gray-lightest, $color-white)
+  background-image: linear-gradient(to right, $color-gray-lightest, $color-white)
   display: flex
   flex-direction: column
 
@@ -10,7 +10,6 @@
 
   &__logo,
   &__menu
-    display: flex
     height: 28px
 
   &__elements
@@ -23,16 +22,16 @@
     margin: $m-xs
 
   & .button
-    margin: $m-sm
     letter-spacing: 2px
+    margin: $m-sm
 
 +media-breakpoint-up(lg)
   .navbar
-    min-height: $m-base * 3
-    flex-direction: row
-    justify-content: space-around
-    font-size: $font-size-sm
     align-items: center
+    flex-direction: row
+    font-size: $font-size-sm
+    justify-content: space-around
+    min-height: $m-base * 3
 
     &__elements
       flex-direction: row
