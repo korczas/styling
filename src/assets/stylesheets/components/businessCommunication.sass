@@ -1,0 +1,85 @@
+@keyframes playButton
+  0%
+    box-shadow: 0 0px 10px 10px rgba($color-gray-dark, .3)
+    width: 100px
+    height: 100px
+  50%
+    width: 110px
+    height: 110px
+  100%
+    box-shadow: 0 0px 10px 10px rgba($brand-primary, .3)
+    width: 100px
+    height: 100px
+
+
+.buscom
+  &__wrapper
+    background: linear-gradient(to right, $color-gray-lightest, $color-white)
+    padding: $m-xxl * 3 0
+
+  &__content
+    display: flex
+    justify-content: space-around
+    margin: 0 auto
+    text-align: left
+    width: 1500px
+
+  &__image
+    position: relative
+
+    & img
+      width: 550px
+
+    & .play-button
+      background-color: rgba($color-white, 0.7)
+      border-radius: 50%
+      height: 150px
+      position: absolute
+      right: 50%
+      top: 50%
+      transform: translate(50%, -50%)
+      width: 150px
+
+      &:after
+        background-color: $color-white
+        border-radius: 50%
+        box-shadow: 0 0px 10px 10px rgba($color-gray-dark, .3)
+        content: ""
+        height: 100px
+        left: 50%
+        position: absolute
+        top: 50%
+        transform: translate(-50%, -50%)
+        width: 100px
+        z-index: $z-negative
+
+      &:hover
+        &:after
+          animation: playButton $transition-duration
+          animation-fill-mode: forwards
+
+      & img
+        left: 50%
+        position: absolute
+        top: 50%
+        transform: translate(-39%, -50%)
+        width: 30%
+
+  &__overview
+    align-self: center
+    max-width: 450px
+
+  &__try-it
+    display: flex
+    justify-content: space-between
+
+  &__header
+    color: black
+    display: block
+    font-size: $font-size-lg * 2
+    font-weight: $font-weight-bold
+    margin-bottom: $m-xl
+
+  &__description
+    font-size: $font-size-lg
+    margin-bottom: $m-xl

@@ -1,5 +1,26 @@
 .navbar
+  align-items: center
+  background: linear-gradient(to right, $color-gray-lightest, $color-white)
+  display: flex
+  font-size: $font-size-sm
+  justify-content: space-around
   min-height: $m-base * 2
+
+  &__logo
+    display: inline
+    height: 28px
+    width: 88px
+
+  &__elements
+    align-items: center
+    display: flex
+
+  &__element
+    font-weight: $font-weight-bold
+    margin: 0 $m-base
+
+  & .button
+    letter-spacing: 2px
 
 +media-breakpoint-up(md)
   .navbar
