@@ -1,27 +1,50 @@
 .navbar
-  align-items: center
-  background: linear-gradient(to right, $color-gray-lightest, $color-white)
+  background-image: linear-gradient(to right, $color-gray-lightest, $color-white)
   display: flex
-  font-size: $font-size-sm
-  justify-content: space-around
-  min-height: $m-base * 2
+  flex-direction: column
 
-  &__logo
-    display: inline
+  &__logo-and-menu
+    display: flex
+    justify-content: space-between
+    padding: $m-base
+
+  &__logo,
+  &__menu
     height: 28px
-    width: 88px
 
   &__elements
     align-items: center
     display: flex
+    flex-direction: column
 
   &__element
     font-weight: $font-weight-bold
-    margin: 0 $m-base
+    margin: $m-xs
+
+  &__menu-button
+    background-color: transparent
+    border: none
 
   & .button
     letter-spacing: 2px
+    margin: $m-sm
 
-+media-breakpoint-up(md)
++media-breakpoint-up(lg)
   .navbar
+    align-items: center
+    flex-direction: row
+    font-size: $font-size-sm
+    justify-content: space-around
     min-height: $m-base * 3
+
+    &__elements
+      flex-direction: row
+      margin: 0 $m-base
+
+    &__menu-button
+      display: none
+
++media-breakpoint-down(md)
+  .navbar
+    &__elements.-hide
+      display: none

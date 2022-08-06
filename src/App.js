@@ -5,10 +5,10 @@ import BusinessCommunication from './components/BusinessCommunication'
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Navbar />
       <BusinessCommunication />
-    </div>
+    </>
   );
 }
 

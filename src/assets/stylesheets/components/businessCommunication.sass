@@ -1,85 +1,110 @@
 @keyframes playButton
   0%
     box-shadow: 0 0px 10px 10px rgba($color-gray-dark, .3)
-    width: 100px
-    height: 100px
+    transform: translate(-50%, -50%) scale(1)
   50%
-    width: 110px
-    height: 110px
+    transform: translate(-50%, -50%) scale(1.1)
   100%
     box-shadow: 0 0px 10px 10px rgba($brand-primary, .3)
-    width: 100px
-    height: 100px
+    transform: translate(-50%, -50%) scale(1)
 
 
 .buscom
-  &__wrapper
-    background: linear-gradient(to right, $color-gray-lightest, $color-white)
-    padding: $m-xxl * 3 0
+  background-image: linear-gradient(to right, $color-gray-lightest, $color-white)
 
   &__content
+    align-items: center
     display: flex
+    flex-direction: column
     justify-content: space-around
     margin: 0 auto
     text-align: left
-    width: 1500px
 
   &__image
+    flex: 1 1
+    padding: $m-base
     position: relative
 
-    & img
-      width: 550px
+  &__play-button-circle
+    background-color: rgba($color-white, 0.7)
+    border-radius: 50%
+    height: 150px
+    position: absolute
+    right: 50%
+    top: 50%
+    transform: translate(50%, -50%)
+    width: 150px
 
-    & .play-button
-      background-color: rgba($color-white, 0.7)
+    &:after
+      background-color: $color-white
       border-radius: 50%
-      height: 150px
+      box-shadow: 0 0 10px 10px rgba($color-gray-dark, .3)
+      content: ""
+      height: 100px
+      left: 50%
       position: absolute
-      right: 50%
       top: 50%
-      transform: translate(50%, -50%)
-      width: 150px
+      transform: translate(-50%, -50%)
+      width: 100px
+      z-index: $z-negative
 
+    &:hover
       &:after
-        background-color: $color-white
-        border-radius: 50%
-        box-shadow: 0 0px 10px 10px rgba($color-gray-dark, .3)
-        content: ""
-        height: 100px
-        left: 50%
-        position: absolute
-        top: 50%
-        transform: translate(-50%, -50%)
-        width: 100px
-        z-index: $z-negative
+        animation: playButton $transition-duration
+        animation-fill-mode: forwards
 
-      &:hover
-        &:after
-          animation: playButton $transition-duration
-          animation-fill-mode: forwards
-
-      & img
-        left: 50%
-        position: absolute
-        top: 50%
-        transform: translate(-39%, -50%)
-        width: 30%
+  &__play-button
+    left: 50%
+    position: absolute
+    top: 50%
+    transform: translate(-39%, -50%)
+    width: 30%
 
   &__overview
     align-self: center
-    max-width: 450px
+    flex: 1 1
+    padding: $m-base
 
   &__try-it
     display: flex
-    justify-content: space-between
+    flex-direction: column
+
+    & button
+      margin-top: $m-base
 
   &__header
-    color: black
-    display: block
-    font-size: $font-size-lg * 2
+    color: $color-black
+    font-size: $font-size-xl
     font-weight: $font-weight-bold
     margin-bottom: $m-xl
 
   &__description
     font-size: $font-size-lg
     margin-bottom: $m-xl
+
++media-breakpoint-up(md)
+  .buscom
+    &__overview,
+    &__image
+      padding: $m-xxl * 2
+
++media-breakpoint-up(lg)
+  .buscom
+    &__overview,
+    &__image
+      padding: $m-xl * 2
+
+    &__content
+      flex-direction: row
+
++media-breakpoint-up(xl)
+  .buscom
+    &__content
+      width: 1200px
+
+    &__try-it
+      flex-direction: row
+      justify-content: space-between
+
+      & button
+        margin-top: 0
